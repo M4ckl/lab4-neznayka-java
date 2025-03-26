@@ -6,7 +6,7 @@ public class Cosmos implements ISky{
     public Cosmos(ISky sky) {
         this.skyColor = sky.getSkyColor();
         this.stars = sky.getStars();
-        this.earthShape = String.valueOf(EForm.ПОЛНЫЙКРУГ);
+        this.earthShape = String.valueOf(EForm.FULLCIRCLE);
     }
 
     @Override

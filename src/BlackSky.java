@@ -1,6 +1,6 @@
 public class BlackSky implements ISky {
-    private String color = "черный";
-    private String stars = "мириады сверкающих звезд";
+    private String color = "black";
+    private String stars = "myriad sparkling stars";
 
     @Override
     public String getSkyColor() {

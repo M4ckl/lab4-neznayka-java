@@ -2,14 +2,15 @@
 public class Main {
     public static void main(String[] args) {
 
-        APerson znajka = new APerson("Знайка", "Друг");
+        APerson znajka = new APerson("Znayka", "Friend");
 
         znajka.checkProtectionOfEquipment();
 
-        APerson fuksia = new APerson("Фуксия", "Друг");
-        APerson seledochka = new APerson("Селедочка", "Друг");
-        APerson zvezdochkin = new APerson("Звездочкин", "Проффесор");
-        APerson others = new APerson("Другие", "Другие");
+        APerson fuksia = new APerson("Fuchsia", "Friend");
+        APerson seledochka = new APerson("s" +
+                "Selyodochka", "Friend");
+        APerson zvezdochkin = new APerson("Zvezdochkin", "Professor");
+        APerson others = new APerson("Other", "Other");
 
         znajka.seeAbout();
         znajka.changeLocation();
@@ -18,8 +19,8 @@ public class Main {
         zvezdochkin.changeLocation();
         others.changeLocation();
 
-        ACosmicThings earth = new Earth("Земля", 100);
-        ACosmicThings moon = new Moon("Луна", 27);
+        ACosmicThings earth = new Earth("Earth", 100);
+        ACosmicThings moon = new Moon("Moon", 27);
 
 
         earth.lookLike();
@@ -40,8 +41,8 @@ public class Main {
 
         // Анонимный класс
         ISky anotherSky = new ISky() {
-            private String color = "фиолетовый";
-            private String stars = "миллионы мерцающих звезд";
+            private String color = "violet";
+            private String stars = "Millions of twinkling stars";
 
             @Override
             public String getSkyColor() {
@@ -57,9 +58,9 @@ public class Main {
         // Локальный класс
         class DisplayText {
             void display() {
-                System.out.printf("Как только Знайка и его спутники вышли из пещеры, они увидели над собой %s небо с %s и огромный сияющий %s земля.\n",
-                        space.getSkyColor(), space.getStars(), EForm.ПОЛНЫЙКРУГ);
-                System.out.printf("Они также увидели другое небо с %s и %s дискообразной Землей.\n", anotherSky.getSkyColor(), EForm.ПОЛНЫЙКРУГ);
+                System.out.printf("As soon as Znayka and his companions exited the cave, they saw above them the %s sky with %s and a huge shining %s earth.\n",
+                        space.getSkyColor(), space.getStars(), EForm.FULLCIRCLE);
+                System.out.printf("They also saw another sky with %s and a %s disco-shaped Earth.\n", anotherSky.getSkyColor(), EForm.FULLCIRCLE);
             }
         }
         DisplayText displayText = new DisplayText();

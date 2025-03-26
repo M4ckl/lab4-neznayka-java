@@ -21,30 +21,30 @@ public class APerson implements IMove, IGetters, ICheckTruth {
 
     @Override
     public void changeLocation() {
-        if (getFeature().equals("Другие")) {
-            System.out.println(getName() + " остануться в " + ELocation.ПЕЩЕРЕ + ".");
+        if (getFeature().equals("Other")) {
+            System.out.println(getName() + " will remain in " + ELocation.CAVE + ".");
         }
         else {
-            System.out.println(getName() + " пойдет в " + ELocation.ОБРАТНЫЙПУТЬ + ".");
+            System.out.println(getName() + " will go to " + ELocation.RETURNJOURNEY + ".");
         }
     }
 
     @Override
     public void talk() {
-        System.out.println("говорит. ");
+        System.out.println("says. ");
     }
 
     @Override
-    public void seeAbout() { System.out.print(name + " посмотрел. "); }
+    public void seeAbout() { System.out.print(name + "looked at it. "); }
 
     @Override
     public void checkTruth(ACosmicThings planet1, ACosmicThings planet2) {
         if (Integer.parseInt(planet1.getFeature()) > Integer.parseInt(planet2.getFeature())){
-            System.out.println("Все факты-правда.");
-            System.out.println("Есть возможность " + EAbilities.ЧИТАТЬ + ", " + EAbilities.ПИСАТЬ + ", " + EAbilities.РИСОВАТЬ + ", " + EAbilities.ДЕЛАТЬДРУГИЕДЕЛА + ".");
+            System.out.println("All the facts are true.");
+            System.out.println("There is a possibility to " + EAbilities.READ + ", " + EAbilities.WRITE + ", " + EAbilities.DRAW + ", " + EAbilities.D0OTHERTHINGS + ".");
         }
         else {
-            System.out.println("Все факты-ложь.");
+            System.out.println("All the facts are lies.");
         }
     }
     //статичный класс определяющий правла или ложь чувтсва
@@ -59,7 +59,7 @@ public class APerson implements IMove, IGetters, ICheckTruth {
         //локальный класс с методом рандом выбирает костюм
         class LocalClassRandom {
             EEquipment randomSuit() {
-                EEquipment [] suits = {EEquipment.ПРОФЕССИОНАЛЬНЫЙКОСТЮМ, EEquipment.КОСМИЧЕСКИЙКОСТЮМ , EEquipment.КУПАЛЬНЫЙКОСТЮМ};
+                EEquipment [] suits = {EEquipment.PROFESSIONALCOSTUME, EEquipment.SPACESUIT , EEquipment.BATHINGSUIT};
                 Random rand = new Random();
                 EEquipment result = suits[rand.nextInt(3)];
                 return result;
@@ -70,11 +70,11 @@ public class APerson implements IMove, IGetters, ICheckTruth {
         EEquipment CurrentProtection = resultEquipment.randomSuit();
 
         //выдача ошибки если купальный костюм
-        if (CurrentProtection == EEquipment.КУПАЛЬНЫЙКОСТЮМ) {
-            throw new DeathError("Невозможно выжить в " + EEquipment.КУПАЛЬНЫЙКОСТЮМ + " из-за облучения космическими лучами. ");
+        if (CurrentProtection == EEquipment.BATHINGSUIT) {
+            throw new DeathError("It is impossible to survive in " + EEquipment.BATHINGSUIT + " due to exposure to cosmic rays. ");
         }
         else {
-            System.out.println(tff.setFeeling("По своим ощущениям ")+ getName() + " чувствовал себя в " + CurrentProtection + " очень безопасно. ");
+            System.out.println(tff.setFeeling("According to my feelings ")+ getName() + " felt like he was in " + CurrentProtection + " very safe. ");
         }
     }
 
