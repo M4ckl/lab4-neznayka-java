@@ -47,3 +47,6 @@ Note: The output does not need to exactly replicate the original text or include
 6. Handle created <strong>checked and unchecked exceptions</strong>.
 
 7. You may add <strong>internal, local, and anonymous classes</strong> if needed.
+
+CONSOLE: 
+<img width="1221" alt="Zrzut ekranu 2025-03-26 o 09 20 09" src="https://github.com/user-attachments/assets/8b435b31-f230-4821-838f-753fdc624f4c" />
